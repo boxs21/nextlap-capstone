@@ -131,8 +131,8 @@ short-history vs normal rows · errors by context (compound, tyre age, stint pha
 
 | Member | Main contribution | Decision they can explain |
 |---|---|---|
-| Andy Ignacio Jesús Villarroel González | `<fill in>` | `<fill in>` |
-| Agustín Eduardo Reyes Pereira | `<fill in>` | `<fill in>` |
+| Andy Ignacio Jesús Villarroel González | Reproduced reference notebook (`reproduce_reference.ipynb`), generated `outputs/`, `requirements.txt` and run record with checksums; made the Hito 1 commit | Why all three models are scored on the same 1,808 `pair_id`s and why preprocessing is fitted on training rows only |
+| Agustín Eduardo Reyes Pereira | Problem framing (target, timing, clean-pair limit), pace-consistency hypothesis and the (a)/(b)/(c) ablation plan with its leakage checks | Why `recent_std_s` uses the same clean-lap window as `recent_mean_s`, and why the `has_history2` flag needs its own version (b) |
 
 - **AI use:** see `DECISION_LOG.md`.
 - **Revision after feedback:** the in-class version said "variability of the last three observed laps" and "MAE lower than the reference". After feedback we (1) defined the window as the same clean-lap window used by `recent_mean_s`, (2) added version (b) so the flag and the spread are not confused, and (3) required the gain in each validation race, not only overall.
