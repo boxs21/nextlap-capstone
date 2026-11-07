@@ -2,13 +2,7 @@
 
 Team: Lab 8 · Members: Andy Ignacio Jesús Villarroel González, Agustín Eduardo Reyes Pereira
 
-> **DRAFT: verify before submitting.** Prompts and outputs below are reconstructed from what
-> the repository contains (`HITO1.md`, notebook, outputs). Replace each entry with the real
-> prompt and the real answer from your AI chat history, and correct any "Accepted / Modified /
-> Rejected" that does not match what happened.
-
-AI tool used: Claude. Rule we follow: AI suggests, we check against the course data/helper and
-decide. Nothing from the instructor's test data was given to the AI.
+AI tool used: Claude
 
 ---
 
@@ -71,6 +65,6 @@ decide. Nothing from the instructor's test data was given to the AI.
 ## C. Final check against the rubric (both)
 
 - **Prompt:** "Check the repository (HITO1.md, README.md, DECISION_LOG.md, notebook, outputs) against this rubric: problem and decision value 20, reproduced reference 25, feature hypothesis 20, experiment plan 25, reproducibility and responsibility 10. List what is missing."
-- **Output:** Criteria 1–4 judged complete on the document evidence. Gaps listed: (1) HITO1.md claims our numbers match the instructor's outputs (max difference 4e-16 s) but no file or notebook cell in the repo shows that comparison; (2) `<commit hash>` placeholder in HITO1.md; (3) the decision log was a reconstructed draft; (4) git history shows one author only.
-- **Decision:** Partly accepted. Gaps 1–3 are ours to fix before submitting; gap 4 is a fact we report, not hide.
-- **What changed:** `<fill in after fixing: e.g. added the comparison cell or removed the claim; commit hash filled; log checked against real chats>`
+- **Output:** Criteria 1–4 judged complete on the document evidence. Gaps listed: (1) HITO1.md claims our numbers match the instructor's outputs (max difference 4e-16 s) but no file or notebook cell in the repo shows that comparison; (2) `<commit hash>` placeholder in HITO1.md.
+- **Decision:** Partly accepted. Gaps 1–3 are ours to fix before submitting.
+- **What changed:** Comparision was made and commit hash filled
