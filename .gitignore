@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.DS_Store
+# course material: not redistributed in a public repo
+W09_StudentPack_v2/
+*.zip
+# personal notes
+WEEK9_RESUMEN.md
+_local_hito2/
