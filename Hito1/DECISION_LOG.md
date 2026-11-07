@@ -66,5 +66,6 @@ AI tool used: Claude
 
 - **Prompt:** "Check the repository (HITO1.md, README.md, DECISION_LOG.md, notebook, outputs) against this rubric: problem and decision value 20, reproduced reference 25, feature hypothesis 20, experiment plan 25, reproducibility and responsibility 10. List what is missing."
 - **Output:** Criteria 1–4 judged complete on the document evidence. Gaps listed: (1) HITO1.md claims our numbers match the instructor's outputs (max difference 4e-16 s) but no file or notebook cell in the repo shows that comparison; (2) `<commit hash>` placeholder in HITO1.md.
-- **Decision:** Partly accepted. Gaps 1–3 are ours to fix before submitting.
-- **What changed:** Comparision was made and commit hash filled
+- **Decision:** Accepted. Both gaps are ours to fix before submitting.
+- **What changed:** (1) Added section 5 to the notebook. It reads the instructor's outputs from the course pack (`salidas_referencia_INSTRUCTOR/reference_metrics.csv` and `validation_reference_predictions.csv`), merges them with ours by `pair_id` and asserts the same 1,808 rows, the same counts and differences below 1e-9 s. Result: max prediction difference 1.4e-14 s, max MAE difference 4.4e-16 s; stored with the files' checksums under `instructor_check` in `outputs/reference_run.json`. HITO1.md now cites these two numbers instead of a single unsupported "4e-16 s". (2) Filled the commit hash in HITO1.md with the commit that contains the final notebook and outputs.
+- **How we checked:** Re-ran the whole notebook (`nbconvert --execute`); `reference_metrics.csv` did not change.

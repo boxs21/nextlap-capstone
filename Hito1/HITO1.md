@@ -50,8 +50,13 @@ which laps will be clean.
 | **OLS reference** | **0.3867** | **0.3736** | **0.4056** |
 
 All three models are scored on the **same 1,808 rows** (same `pair_id`s; their fingerprint is
-in `outputs/reference_run.json`). Our numbers match the instructor's supplied outputs (max
-difference 4e-16 s).
+in `outputs/reference_run.json`). Our numbers match the instructor's supplied outputs, taken
+from the course pack (`StudentPack_v2` → `salidas_referencia_INSTRUCTOR/reference_metrics.csv`
+and `validation_reference_predictions.csv`; not copied here, checksums recorded). The notebook
+(section 5) merges both by `pair_id` and finds the same 1,808 rows and counts, a max
+prediction difference of 1.4e-14 s and a max MAE difference of 4.4e-16 s (stored under
+`instructor_check` in `outputs/reference_run.json`). The instructor files are only used for
+this check, never to produce our numbers.
 
 **One comparison explained.** A single median for every lap is very poor (11.4 s) because
 lap times differ a lot between circuits. Simply repeating the current lap time already

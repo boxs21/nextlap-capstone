@@ -79,5 +79,23 @@
       "n": 742,
       "MAE_s": 0.40557945062836276
     }
-  ]
+  ],
+  "instructor_check": {
+    "available": true,
+    "source": "StudentPack_v2/salidas_referencia_INSTRUCTOR",
+    "files_sha256": {
+      "reference_metrics.csv": "a15956cd6f7a3bd5429f3649e2df9ddb81eb7e9b640b2c4db8deb4efc710558a",
+      "validation_reference_predictions.csv": "bfb25abbae32f9785c3db01ff7c0b1260499350deb29214b5c03baff5d5b1688"
+    },
+    "rows_compared": 1808,
+    "max_abs_pred_diff_s": {
+      "y_true": 0.0,
+      "train_median": 0.0,
+      "persistence": 0.0,
+      "OLS_reference": 1.4210854715202004e-14
+    },
+    "max_abs_mae_diff_s": 4.440892098500626e-16,
+    "tolerance_s": 1e-09,
+    "match": true
+  }
 }

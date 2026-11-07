@@ -41,6 +41,14 @@ Or open `reproduce_reference.ipynb` in Jupyter or VS Code and use **Run All**.
 
 The notebook writes `outputs/reference_metrics.csv` (model, population, n, MAE in seconds),
 `outputs/validation_reference_predictions.csv` (per `pair_id`) and `outputs/reference_run.json`.
+
+**Check against the instructor's outputs.** The same course pack contains the instructor's
+results in `salidas_referencia_INSTRUCTOR/` (`reference_metrics.csv` and
+`validation_reference_predictions.csv`), next to `base_NextLap/`. Section 5 of the notebook
+compares our predictions and MAE table with them by `pair_id` and stops if anything differs by
+more than 1e-9 s. The result and the checksums of those files are stored under
+`instructor_check` in `outputs/reference_run.json`. They are course material, so they are not
+copied into this repository; if the folder is missing, the check is skipped with a message.
 No internet, no test data, `RANDOM_SEED = 414`, runs in a few seconds.
 
 The notebook is adapted from the course script `probar_referencia_v1.py` and uses the course
