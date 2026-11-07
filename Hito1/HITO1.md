@@ -1,6 +1,6 @@
 # Hito 1 · NextLap · Problem framing and experiment plan
 
-Team: Lab 8 · Members: Andy Ignacio Jesús Villarroel González, Agustín Eduardo Reyes Pereira · Commit: `<commit hash>` · Date: 12 Nov 2026
+Team: Lab 8 · Members: Andy Ignacio Jesús Villarroel González, Agustín Eduardo Reyes Pereira · Commit: `453863d` (notebook and outputs) · Date: 12 Nov 2026
 
 ---
 
