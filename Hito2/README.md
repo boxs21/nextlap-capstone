@@ -7,7 +7,7 @@ Executed experiment, error analysis and SHAP for the pace-consistency hypothesis
 | | |
 |---|---|
 | **Repository** | https://github.com/boxs21/nextlap-capstone |
-| **Commit of the submitted run** | `<COMMIT>` (see "Commit" below) |
+| **Commit of the submitted run** | `cabeedc` (see "Commit" below) |
 | **Report** | [`HITO2.md`](HITO2.md) |
 | **Decision log** | [`DECISION_LOG.md`](DECISION_LOG.md) |
 | **Code** | [`hito2_experiment.ipynb`](hito2_experiment.ipynb) (one notebook, Run All, ~1 min; executed outputs saved in it) |
