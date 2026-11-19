@@ -238,8 +238,23 @@ Decisions and trials: [`DECISION_LOG.md`](DECISION_LOG.md).
 
 ## 8. Each partner's short explanation
 
-> **TO BE WRITTEN BY EACH PARTNER** (own words, ~1 minute each): a decision you contributed to, the result or check that supports it, one limitation or next check, and any AI assistance you actually used and how you verified it.
+**Andy Ignacio Jesús Villarroel González:** I ran the four leakage and coverage checks before looking at any extension
+MAE, and I set up the reproducibility side (README, data hashes, a notebook that passes Run All). The decision I defend is
+extending the truncation check to validation rows instead of training rows only. Validation rows are the ones we score, so a
+leak there would bias the (b) vs (c) comparison directly. With 500 training and 200 validation rows (seed 414), deleting every
+lap after *t* changed 0 values, and our window rebuilt the released `recent_mean_s` on 7,580 rows with a max difference of
+1.4e-14 s and 0 `recent_count` mismatches. Limitation: the truncation check uses a 700-row sample, not every row, and there
+are only two validation races, so a leak that only shows up in rare rows could slip through. Running it on all 7,580 rows
+is cheap and would be the next check. AI: I used Claude to draft `history_features()` and the assertions. I verified them
+by checking that the rebuilt `recent_mean_s` matched the published column and that the reference reproduced Hito 1 row by
+row (max difference 4.3e-14 s).
 
-**Andy Ignacio Jesús Villarroel González:** _pending_
-
-**Agustín Eduardo Reyes Pereira:** _pending_
+**Agustín Eduardo Reyes Pereira:** I ran the ablation (a)/(b)/(c), the error analysis by race and by slices, and the
+local and global SHAP. The decision I defend is keeping (c) instead of switching to T3, even though T3 has a lower MAE
+(0.3652 vs 0.3697 s). We ran T3 after seeing validation results, so switching would be tuning on validation. The planned (c)
+already meets the pre-registered rule: control − candidate = +0.018 s, positive in R8 (+0.013) and R9 (+0.025), with a
+cluster-bootstrap interval of [+0.009, +0.028] s. The T3 − T1 gap (0.0045 s) is small compared with that interval.
+Limitation: almost all of the gain comes from high-spread rows (+0.085 s, n=397), and short-history rows get worse in R9
+(−0.023 s, n=66). Next I would test a signed deviation instead of the symmetric spread. AI: I used Claude for the
+cluster bootstrap and the SHAP code. I verified that base + contributions rebuilds every prediction (max 1.4e-14 s), and I
+re-read case `2026-R9-23-L7` in the raw lap file to confirm laps 5–7 and the target lap 8.

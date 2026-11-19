@@ -84,15 +84,22 @@ loss in R9.
 
 ## E · Contributions
 
-> **TO BE COMPLETED BY THE TEAM:** each member's contribution to Hito 2 and one decision each can explain.
-
 | Member | Contribution | Decision they can explain |
 |---|---|---|
-| Andy Ignacio Jesús Villarroel González | _pending_ | _pending_ |
-| Agustín Eduardo Reyes Pereira | _pending_ | _pending_ |
+| Andy Ignacio Jesús Villarroel González | `history_features()` on the original timeline; the four Hito 1 checks (leakage, availability at *t*, coverage), run before reading any extension MAE; reproducibility (README, data hashes, Run All, run record) | Extend check 2 to 200 validation rows (D1): those are the scored rows. Result: 700 rows, 0 changed |
+| Agustín Eduardo Reyes Pereira | Ablation (a)/(b)/(c) and trials T2/T3; errors by race and by slice; inspected case `2026-R9-23-L7`; cluster bootstrap; local and global SHAP | Keep (c), do not switch to T3 (D3): T3 was chosen after seeing validation. (c) meets the rule in R8 and R9, 95% CI [+0.009, +0.028] s |
+
+Both members reviewed the final report and the decision in D4.
 
 ---
 
 ## F · AI use and verification
 
-> **TO BE COMPLETED BY THE TEAM:** actual AI use (or no use). For each adopted suggestion: a representative prompt or reference, what was accepted or changed, and how it was verified.
+We used Claude (Anthropic) as a coding assistant in this hito. It did not choose the hypothesis, the decision rule or the
+reported model; those were fixed in Hito 1 or decided by us (D3).
+
+| Use | Representative prompt (paraphrased) | Accepted / changed | How we verified it |
+|---|---|---|---|
+| `history_features()` and leakage assertions (Andy) | "Write a function that computes the std (ddof=1) of the last up to 3 clean laps up to and including *t*, inside driver, race and stint, on the original lap timeline, plus asserts for the Hito 1 checks" | Accepted the code after review. The window rule (same as the course helper) and the extension of check 2 to validation rows (D1) were our decisions, not the assistant's | Rebuilt `recent_mean_s` / `recent_count` match the released columns (7,580 rows, max diff 1.4e-14 s, 0 mismatches); truncation check 0 changed in 700 rows; reference reproduces Hito 1 and the instructor file (≤ 4.3e-14 s) |
+| Cluster bootstrap and SHAP code (Agustín) | "Paired bootstrap of the MAE difference resampling whole driver-races; then SHAP LinearExplainer for the OLS pipeline with one-hot columns summed back to the original input" | Accepted after review. Background (all 5,772 training rows), 43 clusters and seed 414 are the settings we checked in the run record | Base + contributions rebuilds every prediction (max 1.4e-14 s); SHAP equals coef × (x − background mean); case `2026-R9-23-L7` re-read from the raw lap file |
+| Drafting and editing the report text | Summaries of notebook outputs into `HITO2.md` sections | Rewritten and shortened by us | Every number was checked by us against the executed notebook's cell outputs and the run record (§10) |
