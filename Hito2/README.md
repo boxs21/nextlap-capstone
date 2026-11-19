@@ -74,6 +74,14 @@ to show that the Hito 1 reference is reproduced row by row.
 
 ## Commit
 
-The notebook's run record (§10, `git_head_at_run`) shows the commit checked out when it was executed (the parent of the
-submission commit, because the executed notebook is committed with the code). Running the command above at the submission
-commit regenerates the same predictions file and the same cell outputs.
+The notebook's run record (§10, `git_head_at_run`) shows `3933576`, the commit checked out when the notebook was executed.
+The chain is `3933576` → `d321ac9` → `cabeedc`:
+
+- `d321ac9` adds the executed notebook, `outputs/validation_predictions.csv` and the report. A notebook cannot record the
+  hash of the commit that contains it, so its run record points to the commit before.
+- `cabeedc` (the submitted commit) only fills the text sections of `HITO2.md` §8 and `DECISION_LOG.md` E–F. The notebook,
+  the predictions file and `requirements.txt` are byte-identical to `d321ac9` (`git diff --stat d321ac9 cabeedc` lists only
+  the two `.md` files).
+- Later commits only edit this README (commit hash and this note).
+
+Running the command above at `cabeedc` regenerates the same predictions file and the same cell outputs.
