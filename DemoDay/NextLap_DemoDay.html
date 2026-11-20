@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -184,12 +184,12 @@ html.print h1 em,html.print h2 em,html.print .verdict em{background:none;-webkit
 
 <!-- ===================== 01 ===================== -->
 <section class="slide s1" data-who="ANDY" data-t="0:00–0:35" data-end="35">
-  <div class="kick rv"><b></b>IIT414W · NextLap Demo Day · Grupo 8</div>
+  <div class="kick rv"><b></b>IIT414W · NextLap Demo Day · Group 8</div>
   <div class="chip rv"><span class="mono">0:00–0:35</span><span class="who">ANDY</span></div>
   <div class="hero">
-    <h1 class="rv" style="--i:1">¿Cuánto tardará la <em>próxima vuelta</em>?</h1>
-    <p class="oneliner rv" style="--i:3">Al terminar la vuelta <b>t</b>, predecimos cuántos <b>segundos</b> durará la vuelta <b>t+1</b> del mismo piloto, usando solo lo que ya se sabe. Podría ayudar a un ingeniero a <b>anticipar el ritmo</b> y decidir cuándo reaccionar.</p>
-    <p class="rv" style="--i:4;font:500 20px/1.4 var(--mono);letter-spacing:.06em;color:var(--mute);margin-top:22px">Validación sobre carreras pasadas · no es una prueba en vivo</p>
+    <h1 class="rv" style="--i:1">How long will the <em>next lap</em> take?</h1>
+    <p class="oneliner rv" style="--i:3">When lap <b>t</b> ends, we predict how many <b>seconds</b> lap <b>t+1</b> of the same driver will take, using only what is already known. It could help a race engineer <b>anticipate pace</b> and decide when to react.</p>
+    <p class="rv" style="--i:4;font:500 20px/1.4 var(--mono);letter-spacing:.06em;color:var(--mute);margin-top:22px">Validation on past races · not a live test</p>
   </div>
   <svg class="track" viewBox="0 0 760 760" aria-hidden="true">
     <defs>
@@ -199,17 +199,17 @@ html.print h1 em,html.print h2 em,html.print .verdict em{background:none;-webkit
     <path d="M380 92 C 560 92 676 190 676 330 C 676 430 610 470 540 500 C 470 530 470 600 520 640 C 570 680 520 712 440 712 L 250 712 C 140 712 84 640 84 540 C 84 440 160 400 200 330 C 240 260 200 200 230 150 C 260 100 300 92 380 92 Z" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="44" stroke-linejoin="round"/>
     <path class="draw" pathLength="1" style="--dd:.3s" d="M380 92 C 560 92 676 190 676 330 C 676 430 610 470 540 500 C 470 530 470 600 520 640 C 570 680 520 712 440 712 L 250 712 C 140 712 84 640 84 540 C 84 440 160 400 200 330 C 240 260 200 200 230 150 C 260 100 300 92 380 92 Z" fill="none" stroke="url(#tg)" stroke-width="2.5" filter="url(#glow)"/>
     <path d="M380 70 L380 114" stroke="#fff" stroke-width="3" stroke-dasharray="4 4"/>
-    <text x="392" y="64" fill="#8b909c" font-size="14" letter-spacing="3">FIN VUELTA t</text>
+    <text x="392" y="64" fill="#8b909c" font-size="14" letter-spacing="3">END OF LAP t</text>
     <g class="car"><circle r="9" fill="#ff3b2f" filter="url(#glow)"/><circle r="3.5" fill="#fff"/></g>
   </svg>
   <div class="readout rv" style="--i:5">
-    <div class="lbl">PREDICCIÓN VUELTA t+1</div>
+    <div class="lbl">PREDICTION · LAP t+1</div>
     <div class="big"><span data-count="99.121" data-dec="3">99.121</span><small> s</small></div>
-    <div class="lbl" style="margin-top:12px">OBSERVADO <span style="color:var(--ink)">97.882 s</span> · ERROR 1.239 s</div>
+    <div class="lbl" style="margin-top:12px">OBSERVED <span style="color:var(--ink)">97.882 s</span> · ERROR 1.239 s</div>
   </div>
   <div class="names">
-    <div class="rv" style="--i:6"><span>Integrante</span>Andy Villarroel</div>
-    <div class="rv" style="--i:7"><span>Integrante</span>Agustín Reyes</div>
+    <div class="rv" style="--i:6"><span>Team member</span>Andy Villarroel</div>
+    <div class="rv" style="--i:7"><span>Team member</span>Agustín Reyes</div>
   </div>
   <div class="num">01 <i>/</i> 06</div>
 </section>
@@ -219,8 +219,8 @@ html.print h1 em,html.print h2 em,html.print .verdict em{background:none;-webkit
   <div class="kick rv"><b></b>IIT414W / NextLap Demo Day</div>
   <div class="chip rv"><span class="mono">0:35–1:20</span><span class="who">ANDY</span></div>
   <div class="ghost">02</div>
-  <h2 class="rv" style="--i:1">¿Qué cambiamos en el <em>modelo</em>?</h2>
-  <p class="lead rv" style="--i:2">El promedio reciente no distingue a un piloto <strong>regular</strong> de uno que va <strong>a saltos</strong>. Agregamos la <strong>dispersión</strong> de sus últimas vueltas.</p>
+  <h2 class="rv" style="--i:1">What did we <em>change</em>?</h2>
+  <p class="lead rv" style="--i:2">The recent average cannot tell a <strong>steady</strong> driver from an <strong>erratic</strong> one. We added the <strong>spread</strong> of their last laps.</p>
   <div class="cols">
     <div>
       <svg class="lapviz rv" style="--i:3" viewBox="0 0 1000 470" width="950" height="446">
@@ -230,7 +230,7 @@ html.print h1 em,html.print h2 em,html.print .verdict em{background:none;-webkit
         </defs>
         <!-- window band -->
         <rect class="fade" style="--dd:1.2s" x="402" y="20" width="440" height="356" rx="18" fill="rgba(63,224,255,.06)" stroke="rgba(63,224,255,.45)" stroke-dasharray="6 6"/>
-        <text class="fade" style="--dd:1.3s" x="622" y="54" text-anchor="middle" fill="#9eefff" font-size="18" letter-spacing="2">VENTANA ≤ 3 VUELTAS LIMPIAS</text>
+        <text class="fade" style="--dd:1.3s" x="622" y="54" text-anchor="middle" fill="#9eefff" font-size="18" letter-spacing="2">WINDOW ≤ 3 CLEAN LAPS</text>
         <!-- bars (illustrative) -->
         <g>
           <rect class="pop" style="--dd:.5s" x="40" y="186" width="96" height="190" rx="10" fill="rgba(255,255,255,.12)"/>
@@ -251,20 +251,20 @@ html.print h1 em,html.print h2 em,html.print .verdict em{background:none;-webkit
         </g>
         <line x1="20" y1="376" x2="980" y2="376" stroke="rgba(255,255,255,.18)"/>
         <line x1="842" y1="10" x2="842" y2="440" stroke="#fff" stroke-width="2" stroke-dasharray="2 6" opacity=".55"/>
-        <text x="836" y="436" text-anchor="end" fill="#f3f1ea" font-size="16" letter-spacing="2">FIN DE t →</text>
-        <text x="914" y="436" text-anchor="middle" fill="#ff3b2f" font-size="16" letter-spacing="2">NO SE USA</text>
+        <text x="836" y="436" text-anchor="end" fill="#f3f1ea" font-size="16" letter-spacing="2">END OF t →</text>
+        <text x="914" y="436" text-anchor="middle" fill="#ff3b2f" font-size="16" letter-spacing="2">NOT USED</text>
         <g fill="#8b909c" font-size="19" text-anchor="middle">
           <text x="88" y="406">t−4</text><text x="234" y="406">t−3</text><text x="480" y="406">t−2</text><text x="622" y="406">t−1</text><text x="764" y="406" fill="#f3f1ea">t</text><text x="914" y="406" fill="#ff3b2f">t+1</text>
         </g>
-        <text x="234" y="108" text-anchor="middle" fill="#8b909c" font-size="15">pit / no limpia</text>
-        <text x="40" y="462" fill="#4a4f5c" font-size="14">esquema ilustrativo · misma carrera, piloto y stint</text>
+        <text x="234" y="108" text-anchor="middle" fill="#8b909c" font-size="15">pit / not clean</text>
+        <text x="40" y="462" fill="#4a4f5c" font-size="14">illustrative sketch · same race, driver and stint</text>
       </svg>
-      <p class="rv" style="--i:5;font-size:22px;color:var(--mute);margin-top:6px;line-height:1.45;max-width:980px">Con menos de 2 vueltas limpias no hay dispersión: bandera <code>has_history2 = 0</code> y se usa la mediana de entrenamiento (<span class="mono" style="color:var(--ink)">0.258 s</span>).</p>
+      <p class="rv" style="--i:5;font-size:22px;color:var(--mute);margin-top:6px;line-height:1.45;max-width:980px">With fewer than 2 clean laps there is no spread: flag <code>has_history2 = 0</code> and we use the training median (<span class="mono" style="color:var(--ink)">0.258 s</span>).</p>
     </div>
     <div class="stack">
-      <div class="card rv" style="--i:4;--c:var(--cyan)"><h4>Input nuevo</h4><p>Desv. estándar de las últimas ≤ 3 vueltas limpias <b>hasta t</b>, construida sobre la línea de tiempo original.</p></div>
-      <div class="card rv" style="--i:5;--c:var(--pass)"><h4>Evaluación</h4><p>Entrena <b>R1–R7</b> (5,772) · valida <b>R8–R9</b> (1,808). Preprocesado ajustado solo en train.</p><small><span class="pass">✓</span> mismos 1,808 pair_id únicos · merge 1-a-1 · 4/4 checks anti-fuga</small></div>
-      <div class="card rv" style="--i:6;--c:var(--ctl)"><h4>Control pareado</h4><p>Mismo OLS + bandera, <b>reentrenado sin</b> la dispersión. Lo único distinto es el cambio.</p></div>
+      <div class="card rv" style="--i:4;--c:var(--cyan)"><h4>New input</h4><p>Standard deviation of the last ≤ 3 clean laps <b>up to t</b>, built on the original race timeline.</p></div>
+      <div class="card rv" style="--i:5;--c:var(--pass)"><h4>Evaluation</h4><p>Train <b>R1–R7</b> (5,772) · validate <b>R8–R9</b> (1,808). Preprocessing fit on train only.</p><small><span class="pass">✓</span> same 1,808 unique pair_id · 1-to-1 merge · 4/4 leakage checks</small></div>
+      <div class="card rv" style="--i:6;--c:var(--ctl)"><h4>Matched control</h4><p>Same OLS + flag, <b>retrained without</b> the spread. The only difference is the change.</p></div>
     </div>
   </div>
   <div class="num">02 <i>/</i> 06</div>
@@ -275,21 +275,21 @@ html.print h1 em,html.print h2 em,html.print .verdict em{background:none;-webkit
   <div class="kick rv"><b></b>IIT414W / NextLap Demo Day</div>
   <div class="chip rv"><span class="mono">1:20–2:25</span><span class="who">AGUSTÍN</span></div>
   <div class="ghost">03</div>
-  <h2 class="rv" style="--i:1">La dispersión baja el error <em>0.018 s</em></h2>
-  <p class="lead rv" style="--i:2">MAE = en promedio, por cuántos segundos fallamos la vuelta siguiente. <strong>Menos es mejor.</strong> Mismas 1,808 vueltas de validación para todos.</p>
+  <h2 class="rv" style="--i:1">Spread cuts the error by <em>0.018 s</em></h2>
+  <p class="lead rv" style="--i:2">MAE = on average, how many seconds we miss the next lap by. <strong>Lower is better.</strong> Same 1,808 validation laps for every model.</p>
   <div class="cols">
     <div>
       <table class="rv" style="--i:3">
-        <thead><tr><th>Corrida</th><th>Modelo e inputs</th><th class="n">n</th><th class="n">MAE (s)</th></tr></thead>
+        <thead><tr><th>Run</th><th>Model and inputs</th><th class="n">n</th><th class="n">MAE (s)</th></tr></thead>
         <tbody>
-          <tr><td><span class="tag" style="background:var(--ref)"></span>Referencia OLS</td><td>6 inputs publicados</td><td class="n">1,808</td><td class="n">0.3867</td></tr>
-          <tr class="hl"><td><span class="tag" style="background:var(--acc)"></span>Candidato</td><td>+ <code>has_history2</code> + <code>recent_std_s</code></td><td class="n">1,808</td><td class="n"><b data-count="0.3697" data-dec="4">0.3697</b></td></tr>
-          <tr><td><span class="tag" style="background:var(--ctl)"></span>Control pareado</td><td>+ <code>has_history2</code> (sin dispersión)</td><td class="n">1,808</td><td class="n">0.3877</td></tr>
+          <tr><td><span class="tag" style="background:var(--ref)"></span>OLS reference</td><td>6 published inputs</td><td class="n">1,808</td><td class="n">0.3867</td></tr>
+          <tr class="hl"><td><span class="tag" style="background:var(--acc)"></span>Candidate</td><td>+ <code>has_history2</code> + <code>recent_std_s</code></td><td class="n">1,808</td><td class="n"><b data-count="0.3697" data-dec="4">0.3697</b></td></tr>
+          <tr><td><span class="tag" style="background:var(--ctl)"></span>Matched control</td><td>+ <code>has_history2</code> (no spread)</td><td class="n">1,808</td><td class="n">0.3877</td></tr>
         </tbody>
       </table>
       <div class="delta rv" style="--i:5">
         <div class="v">+<span data-count="0.0179" data-dec="4">0.0179</span><small> s</small></div>
-        <p><b>Control − candidato.</b> Positivo = el candidato se equivoca menos. ≈ 4.6 % menos error que el control. La bandera sola no ayuda (ref − control = −0.001 s).</p>
+        <p><b>Control − candidate.</b> Positive = the candidate misses less. ≈ 4.6 % less error than the control. The flag alone does not help (ref − control = −0.001 s).</p>
       </div>
     </div>
     <div>
@@ -299,21 +299,21 @@ html.print h1 em,html.print h2 em,html.print .verdict em{background:none;-webkit
         <rect class="grow" style="--dd:.7s" x="40" y="34" width="499" height="44" rx="6" fill="#6b7182"/>
         <rect class="grow" style="--dd:.85s" x="40" y="104" width="268" height="44" rx="6" fill="#ff3b2f"/>
         <rect class="grow" style="--dd:1s" x="40" y="174" width="513" height="44" rx="6" fill="#c9a24a"/>
-        <g font-size="20" font-weight="700"><text class="fade" style="--dd:1.6s" x="551" y="63" fill="#f3f1ea">0.3867 ref</text><text class="fade" style="--dd:1.6s" x="320" y="133" fill="#ff3b2f">0.3697 candidato</text><text class="fade" style="--dd:1.6s" x="565" y="203" fill="#c9a24a">0.3877 ctrl</text></g>
+        <g font-size="20" font-weight="700"><text class="fade" style="--dd:1.6s" x="551" y="63" fill="#f3f1ea">0.3867 ref</text><text class="fade" style="--dd:1.6s" x="320" y="133" fill="#ff3b2f">0.3697 candidate</text><text class="fade" style="--dd:1.6s" x="565" y="203" fill="#c9a24a">0.3877 ctrl</text></g>
       </svg>
-      <div class="axisnote rv" style="--i:4">MAE (s) · eje inicia en 0.35 s para ver la diferencia</div>
+      <div class="axisnote rv" style="--i:4">MAE (s) · axis starts at 0.35 s to show the gap</div>
       <div style="margin-top:46px;--i:6" class="rv">
-        <div class="axisnote" style="margin-bottom:10px;color:#c9c7c0">IC 95 % bootstrap · 43 piloto-carreras · 2,000 réplicas · seed 414</div>
+        <div class="axisnote" style="margin-bottom:10px;color:#c9c7c0">95 % bootstrap CI · 43 driver-races · 2,000 resamples · seed 414</div>
         <svg viewBox="0 0 760 120" width="760" height="120">
           <line x1="20" y1="60" x2="740" y2="60" stroke="rgba(255,255,255,.15)"/>
           <line x1="125" y1="24" x2="125" y2="96" stroke="#ff5d73" stroke-width="2" stroke-dasharray="4 4"/>
-          <text x="125" y="16" text-anchor="middle" fill="#ff5d73" font-size="14">0 = sin efecto</text>
+          <text x="125" y="16" text-anchor="middle" fill="#ff5d73" font-size="14">0 = no effect</text>
           <rect class="grow" style="--dd:1.4s" x="278" y="48" width="323" height="24" rx="12" fill="rgba(53,227,155,.25)" stroke="#35e39b"/>
           <circle class="pop" style="--dd:2s" cx="429" cy="60" r="11" fill="#35e39b"/>
           <g fill="#8b909c" font-size="15" text-anchor="middle"><text x="278" y="104">+0.009</text><text x="429" y="104" fill="#35e39b">+0.018</text><text x="601" y="104">+0.028</text></g>
         </svg>
-        <p style="font-size:21px;color:#c9c7c0;margin-top:10px">Las 2,000 réplicas dan positivo. Se cumple la regla <b>pre-registrada en Hito 1</b>: candidato &lt; referencia y &lt; control, en total y en cada carrera.</p>
-        <p style="font-size:21px;color:#c9c7c0;margin-top:10px">Mejora <b>real, pero pequeña</b>: el error típico es ≈ 0.37 s.</p>
+        <p style="font-size:21px;color:#c9c7c0;margin-top:10px">All 2,000 resamples are positive. The rule <b>pre-registered in Milestone 1</b> holds: candidate &lt; reference and &lt; control, overall and in each race.</p>
+        <p style="font-size:21px;color:#c9c7c0;margin-top:10px">A <b>real but small</b> gain: the typical error is ≈ 0.37 s.</p>
       </div>
     </div>
   </div>
@@ -325,39 +325,39 @@ html.print h1 em,html.print h2 em,html.print .verdict em{background:none;-webkit
   <div class="kick rv"><b></b>IIT414W / NextLap Demo Day</div>
   <div class="chip rv"><span class="mono">2:25–3:20</span><span class="who">AGUSTÍN</span></div>
   <div class="ghost">04</div>
-  <h2 class="rv" style="--i:1">¿Dónde le <em>cuesta</em> al modelo?</h2>
-  <p class="lead rv" style="--i:2">Mejora en <strong>ambas carreras</strong>, pero casi toda la ganancia viene de <strong>ventanas inestables</strong>.</p>
+  <h2 class="rv" style="--i:1">Where does the model <em>struggle</em>?</h2>
+  <p class="lead rv" style="--i:2">It improves in <strong>both races</strong>, but almost all the gain comes from <strong>unstable windows</strong>.</p>
   <div class="cols">
     <div>
       <table class="rv" style="--i:3">
-        <thead><tr><th>Carrera</th><th class="n">n común</th><th class="n">Control</th><th class="n">Candidato</th><th class="n">Ctrl − cand</th></tr></thead>
+        <thead><tr><th>Race</th><th class="n">common n</th><th class="n">Control</th><th class="n">Candidate</th><th class="n">Ctrl − cand</th></tr></thead>
         <tbody>
           <tr><td>R8 Austria</td><td class="n">1,066</td><td class="n">0.3716</td><td class="n">0.3588</td><td class="n pos">+0.0128</td></tr>
-          <tr><td>R9 Gran Bretaña</td><td class="n">742</td><td class="n">0.4107</td><td class="n">0.3854</td><td class="n pos">+0.0253</td></tr>
-          <tr class="hl"><td>Total (ponderado)</td><td class="n">1,808</td><td class="n">0.3877</td><td class="n">0.3697</td><td class="n pos"><b>+0.0179</b></td></tr>
+          <tr><td>R9 Great Britain</td><td class="n">742</td><td class="n">0.4107</td><td class="n">0.3854</td><td class="n pos">+0.0253</td></tr>
+          <tr class="hl"><td>Total (weighted)</td><td class="n">1,808</td><td class="n">0.3877</td><td class="n">0.3697</td><td class="n pos"><b>+0.0179</b></td></tr>
         </tbody>
       </table>
       <div class="slices">
-        <div class="slice rv" style="--i:4"><div class="k">Dispersión alta &gt; 0.403 s</div><div class="v pos">+0.085</div><div class="s">n = 397 · en R8 y R9</div></div>
-        <div class="slice rv" style="--i:5"><div class="k">Historial corto</div><div class="v bad">−0.008</div><div class="s">n = 148 · R9: −0.023 (n=66)</div></div>
-        <div class="slice rv" style="--i:6"><div class="k">Dispersión media</div><div class="v" style="color:var(--mute)">−0.003</div><div class="s">n = 627</div></div>
-        <div class="slice rv" style="--i:7"><div class="k">Dispersión baja</div><div class="v" style="color:var(--mute)">+0.003</div><div class="s">n = 636 · umbrales de train</div></div>
+        <div class="slice rv" style="--i:4"><div class="k">High spread &gt; 0.403 s</div><div class="v pos">+0.085</div><div class="s">n = 397 · in R8 and R9</div></div>
+        <div class="slice rv" style="--i:5"><div class="k">Short history</div><div class="v bad">−0.008</div><div class="s">n = 148 · R9: −0.023 (n=66)</div></div>
+        <div class="slice rv" style="--i:6"><div class="k">Medium spread</div><div class="v" style="color:var(--mute)">−0.003</div><div class="s">n = 627</div></div>
+        <div class="slice rv" style="--i:7"><div class="k">Low spread</div><div class="v" style="color:var(--mute)">+0.003</div><div class="s">n = 636 · train thresholds</div></div>
       </div>
     </div>
     <div>
-      <div class="axisnote rv" style="--i:3;color:#c9c7c0;margin-bottom:6px">CASO REAL · <span style="color:var(--ink)">2026-R9-23-L7</span> · piloto 23, Williams, Silverstone, HARD</div>
+      <div class="axisnote rv" style="--i:3;color:#c9c7c0;margin-bottom:6px">REAL CASE · <span style="color:var(--ink)">2026-R9-23-L7</span> · driver 23, Williams, Silverstone, HARD</div>
       <svg class="rv" style="--i:3" viewBox="0 0 960 440" width="960" height="440">
         <rect class="fade" style="--dd:.9s" x="290" y="24" width="390" height="386" rx="14" fill="rgba(63,224,255,.05)" stroke="rgba(63,224,255,.3)" stroke-dasharray="5 6"/>
-        <text class="fade" style="--dd:1s" x="485" y="400" text-anchor="middle" fill="#9eefff" font-size="14" letter-spacing="2">VENTANA · σ = 4.671 s</text>
+        <text class="fade" style="--dd:1s" x="485" y="400" text-anchor="middle" fill="#9eefff" font-size="14" letter-spacing="2">WINDOW · σ = 4.671 s</text>
         <g stroke="rgba(255,255,255,.06)"><line x1="40" y1="40" x2="940" y2="40"/><line x1="40" y1="130" x2="940" y2="130"/><line x1="40" y1="220" x2="940" y2="220"/><line x1="40" y1="310" x2="940" y2="310"/><line x1="40" y1="400" x2="940" y2="400"/></g>
         <g fill="#4a4f5c" font-size="14" text-anchor="end"><text x="34" y="44">106</text><text x="34" y="134">103</text><text x="34" y="224">100</text><text x="34" y="314">97</text><text x="34" y="404">94</text></g>
         <g fill="#8b909c" font-size="16" text-anchor="middle"><text x="70" y="432">L3</text><text x="210" y="432">L4</text><text x="350" y="432">L5</text><text x="490" y="432">L6</text><text x="630" y="432" fill="#f3f1ea">L7 = t</text><text x="770" y="432" fill="#ff3b2f">L8 = t+1</text></g>
         <line x1="290" y1="225" x2="680" y2="225" stroke="#3fe0ff" stroke-width="1.5" stroke-dasharray="3 5" class="fade" style="--dd:1.1s"/>
-        <text class="fade" style="--dd:1.1s" x="296" y="216" fill="#3fe0ff" font-size="14">media 99.832</text>
+        <text class="fade" style="--dd:1.1s" x="296" y="216" fill="#3fe0ff" font-size="14">mean 99.832</text>
         <polyline class="draw" pathLength="1" style="--dd:.5s" points="70,345.5 210,326.2 350,331 490,277.9 630,66" fill="none" stroke="#f3f1ea" stroke-width="3.5" stroke-linejoin="round"/>
         <line class="fade" style="--dd:1.8s" x1="630" y1="66" x2="770" y2="283.4" stroke="#f3f1ea" stroke-width="2" stroke-dasharray="6 6" opacity=".6"/>
         <g fill="#f3f1ea"><circle class="pop" style="--dd:.6s" cx="70" cy="345.5" r="6"/><circle class="pop" style="--dd:.7s" cx="210" cy="326.2" r="6"/><circle class="pop" style="--dd:.8s" cx="350" cy="331" r="6"/><circle class="pop" style="--dd:.9s" cx="490" cy="277.9" r="6"/><circle class="pop" style="--dd:1.1s" cx="630" cy="66" r="9" fill="#ff7a45"/></g>
-        <text class="fade" style="--dd:1.2s" x="612" y="58" text-anchor="end" fill="#ff7a45" font-size="17" font-weight="700">105.128 · vuelta lenta aislada</text>
+        <text class="fade" style="--dd:1.2s" x="612" y="58" text-anchor="end" fill="#ff7a45" font-size="17" font-weight="700">105.128 · one-off slow lap</text>
         <!-- predictions -->
         <line class="fade" style="--dd:2.1s" x1="800" y1="156.5" x2="800" y2="283.4" stroke="#c9a24a" stroke-width="2"/>
         <line class="fade" style="--dd:2.5s" x1="820" y1="246.2" x2="820" y2="283.4" stroke="#ff3b2f" stroke-width="3"/>
@@ -373,9 +373,9 @@ html.print h1 em,html.print h2 em,html.print .verdict em{background:none;-webkit
         </g>
       </svg>
       <div class="casebar rv" style="--i:6">
-        <div><span>Observado</span>97.882 s</div><div><span>Predicho (cand.)</span>99.121 s</div><div><span>Error absoluto</span><b class="accc">1.239 s</b></div><div><span>Control</span>4.228 s</div>
+        <div><span>Observed</span>97.882 s</div><div><span>Predicted (cand.)</span>99.121 s</div><div><span>Absolute error</span><b class="accc">1.239 s</b></div><div><span>Control</span>4.228 s</div>
       </div>
-      <p class="rv" style="--i:7;font-size:21px;color:#c9c7c0;margin-top:16px;line-height:1.4"><b style="color:var(--ctl)">Límite:</b> la dispersión no sabe la <b>dirección</b>. Si el ritmo lento sigue, corrige de más (L12 del mismo piloto: 1.15 s peor).</p>
+      <p class="rv" style="--i:7;font-size:21px;color:#c9c7c0;margin-top:16px;line-height:1.4"><b style="color:var(--ctl)">Limit:</b> spread does not know the <b>direction</b>. If the slow pace continues, it over-corrects (L12, same driver: 1.15 s worse).</p>
     </div>
   </div>
   <div class="num">04 <i>/</i> 06</div>
@@ -386,8 +386,8 @@ html.print h1 em,html.print h2 em,html.print .verdict em{background:none;-webkit
   <div class="kick rv"><b></b>IIT414W / NextLap Demo Day</div>
   <div class="chip rv"><span class="mono">3:20–4:20</span><span class="who">AGUSTÍN</span></div>
   <div class="ghost">05</div>
-  <h2 class="rv" style="--i:1">¿Qué movió esa <em>predicción</em>?</h2>
-  <p class="lead rv" style="--i:2">SHAP reparte la predicción del <strong>candidato entrenado</strong> en aportes, en segundos. Fila <code>2026-R9-23-L7</code>.</p>
+  <h2 class="rv" style="--i:1">What moved that <em>prediction</em>?</h2>
+  <p class="lead rv" style="--i:2">SHAP splits the <strong>trained candidate</strong>'s prediction into contributions, in seconds. Row <code>2026-R9-23-L7</code>.</p>
   <div class="cols">
     <div>
       <svg class="rv" style="--i:3" viewBox="0 0 1040 470" width="1040" height="470">
@@ -398,10 +398,10 @@ html.print h1 em,html.print h2 em,html.print .verdict em{background:none;-webkit
           <text x="256" y="128">recent_mean_s</text>
           <text x="256" y="198">current_lap_s</text>
           <text x="256" y="268" fill="#3fe0ff" font-weight="700">recent_std_s</text>
-          <text x="256" y="338">otros 5 inputs</text>
-          <text x="256" y="408" fill="#f3f1ea" font-weight="700">predicción f(x)</text>
+          <text x="256" y="338">other 5 inputs</text>
+          <text x="256" y="408" fill="#f3f1ea" font-weight="700">prediction f(x)</text>
         </g>
-        <g font-size="13" fill="#4a4f5c" text-anchor="end"><text x="256" y="78">media pred. train</text><text x="256" y="148">99.832</text><text x="256" y="218">105.128</text><text x="256" y="288">4.671</text><text x="256" y="358">equipo, neumático…</text></g>
+        <g font-size="13" fill="#4a4f5c" text-anchor="end"><text x="256" y="78">mean train pred.</text><text x="256" y="148">99.832</text><text x="256" y="218">105.128</text><text x="256" y="288">4.671</text><text x="256" y="358">team, tyre…</text></g>
         <!-- base -->
         <rect class="grow" style="--dd:.5s" x="280" y="36" width="97" height="36" rx="5" fill="rgba(255,255,255,.14)"/>
         <text class="fade" style="--dd:.9s" x="387" y="61" fill="#f3f1ea" font-size="18" font-weight="700">86.734</text>
@@ -418,17 +418,17 @@ html.print h1 em,html.print h2 em,html.print .verdict em{background:none;-webkit
         <rect class="grow" style="--dd:2.5s" x="280" y="386" width="538" height="36" rx="5" fill="rgba(255,59,47,.18)" stroke="#ff3b2f"/>
         <text class="fade" style="--dd:2.9s" x="832" y="411" fill="#f3f1ea" font-size="20" font-weight="700">99.121 s</text>
       </svg>
-      <div class="axisnote rv" style="--i:4">LinearExplainer · masker independiente · fondo = 5,772 filas de entrenamiento · valores redondeados</div>
+      <div class="axisnote rv" style="--i:4">LinearExplainer · independent masker · background = 5,772 training rows · rounded values</div>
     </div>
     <div style="display:flex;flex-direction:column;gap:22px">
-      <div class="card rv" style="--i:4;--c:var(--pass)"><h4>Chequeo de la predicción</h4><p class="mono" style="font-size:22px">86.734 + 12.386 = <b>99.121 s</b></p><p style="font-size:19px;color:var(--mute)">Error de reconstrucción máx. 1.4e-14 s en las 1,808 filas.</p><p style="font-size:20px">Error observado, aparte: |97.882 − 99.121| = <b class="accc">1.239 s</b></p></div>
-      <div class="card rv" style="--i:5;--c:var(--cyan)"><h4>Global · 1,808 filas R8–R9</h4>
+      <div class="card rv" style="--i:4;--c:var(--pass)"><h4>Prediction check</h4><p class="mono" style="font-size:22px">86.734 + 12.386 = <b>99.121 s</b></p><p style="font-size:19px;color:var(--mute)">Max reconstruction error 1.4e-14 s across all 1,808 rows.</p><p style="font-size:20px">Observed error, separate: |97.882 − 99.121| = <b class="accc">1.239 s</b></p></div>
+      <div class="card rv" style="--i:5;--c:var(--cyan)"><h4>Global · 1,808 rows R8–R9</h4>
         <div class="gbar" style="--k:0"><span class="nm">recent_mean_s</span><span class="tr"><i style="--w:100%"></i></span><span class="vv">7.405</span></div>
         <div class="gbar" style="--k:1"><span class="nm">current_lap_s</span><span class="tr"><i style="--w:57.7%"></i></span><span class="vv">4.273</span></div>
         <div class="gbar hl" style="--k:2"><span class="nm">recent_std_s</span><span class="tr"><i style="--w:2%"></i></span><span class="vv">0.149</span></div>
         <div class="gbar" style="--k:3"><span class="nm">current_team</span><span class="tr"><i style="--w:.9%"></i></span><span class="vv">0.064</span></div>
         <div class="gbar" style="--k:4"><span class="nm">has_history2</span><span class="tr"><i style="--w:.8%"></i></span><span class="vv">0.058</span></div>
-        <small>media |SHAP| en s · 3.º input, ≈0.15 s en ambas carreras · alta dispersión → predicción más baja. SHAP explica la salida; la mejora de error la prueba la ablación.</small>
+        <small>mean |SHAP| in s · 3rd input, ≈0.15 s in both races · high spread → lower prediction. SHAP explains the output; the ablation proves the error gain.</small>
       </div>
     </div>
   </div>
@@ -440,79 +440,79 @@ html.print h1 em,html.print h2 em,html.print .verdict em{background:none;-webkit
   <div class="kick rv"><b></b>IIT414W / NextLap Demo Day</div>
   <div class="chip rv"><span class="mono">4:20–5:00</span><span class="who">ANDY</span></div>
   <div class="ghost">06</div>
-  <div class="verdict rv" style="--i:1">Mantenemos la <em>dispersión.</em></div>
-  <p class="lead rv" style="--i:2">Con el mismo modelo, las mismas vueltas y el mismo control, se equivoca menos en <strong>ambas carreras</strong>, el intervalo <strong>no incluye cero</strong> y cumple la regla que fijamos <strong>antes</strong> de ver resultados.</p>
+  <div class="verdict rv" style="--i:1">We keep the <em>spread.</em></div>
+  <p class="lead rv" style="--i:2">Same model, same laps, same control: it misses less in <strong>both races</strong>, the interval <strong>excludes zero</strong>, and it meets the rule we set <strong>before</strong> seeing results.</p>
   <div class="grid3">
-    <div class="card rv" style="--i:3;--c:var(--pass)"><h4>Por qué</h4><p>−0.018 s de MAE vs control (IC 95 % +0.009 a +0.028). Ayuda sobre todo cuando el ritmo viene irregular: +0.085 s en ventanas inestables.</p></div>
-    <div class="card rv" style="--i:4;--c:var(--ctl)"><h4>Hasta dónde aplica</h4><p>OLS, vueltas limpias, Austria y Gran Bretaña. Con historial corto <b>no</b> ayuda. No lo afirmamos para pits, safety car ni otros circuitos.</p></div>
-    <div class="card rv" style="--i:5;--c:var(--cyan)"><h4>Siguiente chequeo</h4><p><b>Desviación con signo</b>: vuelta actual − media de las previas. Criterio fijado: menor MAE que el candidato en R8 y R9, sin pérdida en historial corto.</p></div>
+    <div class="card rv" style="--i:3;--c:var(--pass)"><h4>Why</h4><p>−0.018 s MAE vs control (95 % CI +0.009 to +0.028). It helps most when pace is irregular: +0.085 s in unstable windows.</p></div>
+    <div class="card rv" style="--i:4;--c:var(--ctl)"><h4>Where it applies</h4><p>OLS, clean laps, Austria and Great Britain. With short history it does <b>not</b> help. We do not claim it for pits, safety car or other circuits.</p></div>
+    <div class="card rv" style="--i:5;--c:var(--cyan)"><h4>Next check</h4><p><b>Signed deviation</b>: current lap − mean of previous laps. Fixed criterion: lower MAE than the candidate in R8 and R9, no loss on short history.</p></div>
   </div>
-  <p class="rv" style="--i:6;font-size:21px;color:var(--mute);margin-top:30px;max-width:1300px">Una variante sin bandera (T3) dio 0.3652 s, pero se eligió <b style="color:var(--ink)">después</b> de ver validación: adoptarla sería ajustar sobre validación. Queda como próximo chequeo.</p>
-  <div class="q">¿PREGUNTAS?</div>
+  <p class="rv" style="--i:6;font-size:21px;color:var(--mute);margin-top:30px;max-width:1300px">A no-flag variant (T3) scored 0.3652 s, but it was chosen <b style="color:var(--ink)">after</b> seeing validation: adopting it would be tuning on validation. It stays as a next check.</p>
+  <div class="q">QUESTIONS?</div>
   <div class="num">06 <i>/</i> 06</div>
 </section>
 
 <!-- ===================== BACKUP A ===================== -->
 <section class="slide bk" data-who="BACKUP" data-t="Q&amp;A" data-end="0">
-  <div class="kick rv"><b></b>Respaldo · solo si preguntan</div>
+  <div class="kick rv"><b></b>Backup · only if asked</div>
   <div class="chip rv"><span class="mono">BACKUP A</span></div>
-  <h2 class="rv" style="--i:1">Chequeos anti-fuga, <em>antes</em> de mirar el MAE</h2>
+  <h2 class="rv" style="--i:1">Leakage checks, run <em>before</em> looking at MAE</h2>
   <div class="cols">
     <table class="rv" style="--i:2">
-      <thead><tr><th>#</th><th>Chequeo (definido en Hito 1)</th><th>Resultado</th></tr></thead>
+      <thead><tr><th>#</th><th>Check (defined in Milestone 1)</th><th>Result</th></tr></thead>
       <tbody>
-        <tr><td>1</td><td>Nuestra ventana reconstruye <code>recent_mean_s</code> y <code>recent_count</code></td><td class="pass">7,580 filas · máx 1.4e-14 s · 0 diferencias</td></tr>
-        <tr><td>2</td><td>Borrar toda vuelta después de t no cambia la variable</td><td class="pass">700 filas (500 train + 200 val) · 0 cambios</td></tr>
-        <tr><td>3</td><td>Última observación usada termina ≤ fin de t</td><td class="pass">0 de 7,580 después de t</td></tr>
-        <tr><td>4</td><td>Toda fila recibe valor o fallback; mismas filas</td><td class="pass">5,772 / 1,808 · ninguna eliminada</td></tr>
+        <tr><td>1</td><td>Our window rebuilds <code>recent_mean_s</code> and <code>recent_count</code></td><td class="pass">7,580 rows · max 1.4e-14 s · 0 differences</td></tr>
+        <tr><td>2</td><td>Deleting every lap after t does not change the feature</td><td class="pass">700 rows (500 train + 200 val) · 0 changes</td></tr>
+        <tr><td>3</td><td>Last observation used ends ≤ end of t</td><td class="pass">0 of 7,580 after t</td></tr>
+        <tr><td>4</td><td>Every row gets a value or fallback; same rows</td><td class="pass">5,772 / 1,808 · none dropped</td></tr>
       </tbody>
     </table>
     <div>
       <table class="rv" style="--i:3">
-        <thead><tr><th>Población</th><th class="n">Filas</th><th class="n">Con σ</th><th class="n">Fallback</th><th class="n">Cobertura</th></tr></thead>
+        <thead><tr><th>Population</th><th class="n">Rows</th><th class="n">With σ</th><th class="n">Fallback</th><th class="n">Coverage</th></tr></thead>
         <tbody>
           <tr><td>Train</td><td class="n">5,772</td><td class="n">5,316</td><td class="n">456</td><td class="n">92.1 %</td></tr>
-          <tr><td>Validación</td><td class="n">1,808</td><td class="n">1,660</td><td class="n">148</td><td class="n">91.8 %</td></tr>
+          <tr><td>Validation</td><td class="n">1,808</td><td class="n">1,660</td><td class="n">148</td><td class="n">91.8 %</td></tr>
           <tr><td>R8</td><td class="n">1,066</td><td class="n">984</td><td class="n">82</td><td class="n">92.3 %</td></tr>
           <tr><td>R9</td><td class="n">742</td><td class="n">676</td><td class="n">66</td><td class="n">91.1 %</td></tr>
         </tbody>
       </table>
-      <p class="rv" style="--i:4;font-size:21px;color:var(--mute);margin-top:24px;line-height:1.5">El filtro <b style="color:var(--ink)">clean pair</b> es retrospectivo (usa info de t+1): solo define la población evaluada, nunca es input. La referencia reproduce Hito 1 y el archivo del profesor fila a fila (máx 4.3e-14 s). Datos de evaluación final: no accedidos.</p>
+      <p class="rv" style="--i:4;font-size:21px;color:var(--mute);margin-top:24px;line-height:1.5">The <b style="color:var(--ink)">clean pair</b> filter is retrospective (uses t+1 info): it only defines the evaluated population, never an input. The reference reproduces Milestone 1 and the instructor file row by row (max 4.3e-14 s). Final evaluation data: not accessed.</p>
     </div>
   </div>
-  <div class="num">A <i>/</i> respaldo</div>
+  <div class="num">A <i>/</i> backup</div>
 </section>
 
 <!-- ===================== BACKUP B ===================== -->
 <section class="slide bk" data-who="BACKUP" data-t="Q&amp;A" data-end="0">
-  <div class="kick rv"><b></b>Respaldo · solo si preguntan</div>
+  <div class="kick rv"><b></b>Backup · only if asked</div>
   <div class="chip rv"><span class="mono">BACKUP B</span></div>
-  <h2 class="rv" style="--i:1">Pruebas extra y el <em>peor</em> error</h2>
+  <h2 class="rv" style="--i:1">Extra trials and the <em>worst</em> error</h2>
   <div class="cols">
     <div>
       <table class="rv" style="--i:2">
-        <thead><tr><th>Prueba</th><th>Cambio</th><th class="n">MAE</th><th class="n">R8</th><th class="n">R9</th></tr></thead>
+        <thead><tr><th>Trial</th><th>Change</th><th class="n">MAE</th><th class="n">R8</th><th class="n">R9</th></tr></thead>
         <tbody>
-          <tr class="hl"><td>T1 = (c)</td><td>planificada · mín 2 vueltas</td><td class="n">0.3697</td><td class="n pos">+0.0128</td><td class="n pos">+0.0253</td></tr>
-          <tr><td>T2</td><td>mín 3 vueltas limpias</td><td class="n">0.3711</td><td class="n pos">+0.0131</td><td class="n pos">+0.0192</td></tr>
-          <tr><td>T3</td><td>sin bandera (ctrl = ref)</td><td class="n">0.3652</td><td class="n pos">+0.0160</td><td class="n pos">+0.0294</td></tr>
+          <tr class="hl"><td>T1 = (c)</td><td>planned · min 2 laps</td><td class="n">0.3697</td><td class="n pos">+0.0128</td><td class="n pos">+0.0253</td></tr>
+          <tr><td>T2</td><td>min 3 clean laps</td><td class="n">0.3711</td><td class="n pos">+0.0131</td><td class="n pos">+0.0192</td></tr>
+          <tr><td>T3</td><td>no flag (ctrl = ref)</td><td class="n">0.3652</td><td class="n pos">+0.0160</td><td class="n pos">+0.0294</td></tr>
         </tbody>
       </table>
-      <p class="rv" style="--i:3;font-size:21px;color:var(--mute);margin-top:22px;line-height:1.5">T2 y T3 se corrieron <b style="color:var(--ink)">después</b> de la comparación planificada y no se usaron para elegir. Brecha T3 − T1 = 0.0045 s, chica frente al IC.</p>
+      <p class="rv" style="--i:3;font-size:21px;color:var(--mute);margin-top:22px;line-height:1.5">T2 and T3 ran <b style="color:var(--ink)">after</b> the planned comparison and were not used to choose. Gap T3 − T1 = 0.0045 s, small next to the CI.</p>
     </div>
     <div style="display:flex;flex-direction:column;gap:20px">
-      <div class="card rv" style="--i:3;--c:var(--bad)"><h4>Peor error · 2026-R9-23-L6</h4><p>8.25 s: la vuelta lenta (L7) es el <b>objetivo</b>. Nada observable en L6 (σ = 0.98 s) la anuncia. Ninguna variable de historial puede arreglarlo.</p></div>
-      <div class="card rv" style="--i:4;--c:var(--ctl)"><h4>Donde la dispersión daña · 2026-R9-23-L12</h4><p>t = 100.539 s, σ = 1.96 s. El candidato baja a 98.05 s pero el piloto siguió lento (99.33 s): <b>1.15 s peor</b> que el control. La dispersión es simétrica: no sabe la dirección.</p></div>
+      <div class="card rv" style="--i:3;--c:var(--bad)"><h4>Worst error · 2026-R9-23-L6</h4><p>8.25 s: the slow lap (L7) is the <b>target</b>. Nothing visible at L6 (σ = 0.98 s) signals it. No history feature can fix that.</p></div>
+      <div class="card rv" style="--i:4;--c:var(--ctl)"><h4>Where spread hurts · 2026-R9-23-L12</h4><p>t = 100.539 s, σ = 1.96 s. The candidate drops to 98.05 s but the driver stayed slow (99.33 s): <b>1.15 s worse</b> than the control. Spread is symmetric: it does not know the direction.</p></div>
     </div>
   </div>
-  <div class="num">B <i>/</i> respaldo</div>
+  <div class="num">B <i>/</i> backup</div>
 </section>
 
 </div>
 
 <div id="hud"><i></i></div>
 <div id="timer">00:00</div>
-<div id="help">← → navegar · N guion · T cronómetro · F pantalla completa</div>
+<div id="help">← → navigate · N script · T timer · F fullscreen</div>
 <div id="notes"><div class="h"></div><p></p></div>
 
 <script>/* three.min.js (MIT, three.js authors) */
@@ -1667,14 +1667,14 @@ html.print h1 em,html.print h2 em,html.print .verdict em{background:none;-webkit
 <script>
 (()=>{
 const NOTES=[
-`Hola, somos Andy Villarroel y Agustín Reyes, grupo 8, y este es NextLap. La pregunta: cuando un piloto termina una vuelta, ¿cuánto va a tardar en la siguiente? Predecimos ese tiempo en segundos al final de la vuelta t, usando solo lo que ya se sabe. Podría ayudar a un ingeniero a anticipar si el ritmo se cae o se recupera. Todo es validación sobre carreras pasadas, no una prueba en vivo.`,
-`El modelo base usa el promedio de las últimas vueltas, pero el promedio no distingue a un piloto regular de uno que va a saltos. Agregamos la dispersión: cuánto varían sus últimas hasta tres vueltas limpias, calculada hasta la vuelta t, nunca después. Si hay menos de dos, usamos una bandera y la mediana del entrenamiento. Entrenamos con las carreras 1 a 7 y validamos en Austria y Gran Bretaña: las mismas 1.808 vueltas para todos. Antes de mirar resultados pasamos cuatro chequeos anti-fuga. El control es el mismo modelo sin la dispersión. Agustín.`,
-`Medimos el MAE: en promedio, por cuántos segundos fallamos. Menos es mejor. La referencia del curso: 0,3867. Nuestro candidato, con la dispersión: 0,3697. El control, igual pero sin la dispersión: 0,3877; la bandera sola no ayuda. Control menos candidato: +0,018 segundos a favor del candidato, cerca de 4,6 % menos error. Un bootstrap por piloto-carrera da un intervalo de 0,009 a 0,028: no incluye cero. Y se cumple la regla que fijamos en el Hito 1 antes de correr nada. Siendo honestos: es una mejora real, pero pequeña frente a un error típico de 0,37.`,
-`Mejora en las dos carreras: Austria 0,013, Gran Bretaña 0,025. Pero casi toda la ganancia viene de ventanas inestables: ahí baja 0,085. Con poco historial, empeora un poco. Caso real: el piloto 23 en Silverstone venía en 96 segundos y hace una vuelta de 105. El control se la cree y predice 102,1: falla por 4,2. El candidato ve la ventana inestable y predice 99,1; la real fue 97,9, error de 1,24. El límite: la dispersión no sabe la dirección; si el ritmo lento se mantiene, corrige de más.`,
-`¿Qué movió esa predicción? Con SHAP sobre el candidato entrenado: partimos de 86,73, el promedio de entrenamiento. El promedio reciente suma 8,2 y la vuelta actual 6,7, porque Silverstone es largo. La dispersión resta 2,47: con una ventana inestable, el modelo espera una vuelta más rápida. Base más aportes da 99,121, exactamente la predicción. Esto explica la predicción, no el error, que es aparte: 1,24. En global, en las 1.808 vueltas, la dispersión es el tercer input. Pero que mejore el error lo prueba la ablación, no SHAP. Andy.`,
-`Decisión: mantenemos la dispersión. Mismo modelo, mismas vueltas, mismo control: mejora en las dos carreras y el intervalo no incluye cero. Aplica a regresión lineal, vueltas limpias, Austria y Gran Bretaña; no con historial corto, pits ni otros circuitos. Una variante sin bandera dio algo mejor, pero la elegimos después de ver validación, así que no la adoptamos. Siguiente chequeo: una desviación con signo, que sepa si la vuelta fue más lenta o más rápida. Gracias, ¿preguntas?`,
-`RESPALDO A — chequeos anti-fuga y cobertura. Usar si preguntan "¿cómo saben que no usan el futuro?" o "¿qué pasa si falta historial?". Responde Andy.`,
-`RESPALDO B — T2/T3 y peores casos. Usar si preguntan "¿por qué no T3?" (Agustín) o "¿cuál fue el peor error?".`
+"Hi, we're Andy Villarroel and Agustín Reyes, group 8, and this is NextLap. The question: when a driver finishes a lap, how long will the next one take? We predict that time in seconds at the end of lap t, using only what is already known. It could help a race engineer anticipate whether pace is dropping or recovering. Everything here is validation on past races, not a live test.",
+"The base model uses the average of the last laps, but an average cannot tell a steady driver from an erratic one. So we added the spread: how much their last up-to-three clean laps vary, computed up to lap t, never after. With fewer than two, we use a flag and the training median. We train on races 1 to 7 and validate on Austria and Great Britain: the same 1,808 laps for every model. Before looking at results we passed four leakage checks. The control is the same model without the spread. Agustín.",
+"We measure MAE: on average, how many seconds we miss by. Lower is better. The course reference: 0.3867. Our candidate, with the spread: 0.3697. The control, same but without the spread: 0.3877; the flag alone does not help. Control minus candidate: plus 0.018 seconds in favor of the candidate, about 4.6 percent less error. A bootstrap by driver-race gives an interval from 0.009 to 0.028: it excludes zero. And it meets the rule we set in Milestone 1 before running anything. To be honest: it is a real gain, but small next to a typical error of 0.37.",
+"It improves in both races: Austria 0.013, Great Britain 0.025. But almost all the gain comes from unstable windows: there it drops 0.085. With short history, it gets slightly worse. Real case: driver 23 at Silverstone was lapping around 96 seconds and then does a 105. The control believes it and predicts 102.1: off by 4.2. The candidate sees the unstable window and predicts 99.1; the real lap was 97.9, an error of 1.24. The limit: spread does not know the direction; if the slow pace continues, it over-corrects.",
+"What moved that prediction? With SHAP on the trained candidate: we start at 86.73, the training average. The recent average adds 8.2 and the current lap 6.7, because Silverstone is a long lap. The spread subtracts 2.47: with an unstable window, the model expects a faster lap. Base plus contributions gives 99.121, exactly the prediction. This explains the prediction, not the error, which is separate: 1.24. Globally, across the 1,808 laps, spread is the third input. But the ablation proves the error gain, not SHAP. Andy.",
+"Decision: we keep the spread. Same model, same laps, same control: it improves in both races and the interval excludes zero. It applies to linear regression, clean laps, Austria and Great Britain; not to short history, pits or other circuits. A no-flag variant scored slightly better, but we picked it after seeing validation, so we did not adopt it. Next check: a signed deviation, which knows whether the lap was slower or faster. Thank you, questions?",
+"BACKUP A — leakage checks and coverage. Use if asked \"how do you know you don't use the future?\" or \"what if there is no history?\". Andy answers.",
+"BACKUP B — T2/T3 and worst cases. Use if asked \"why not T3?\" (Agustín) or \"what was the worst error?\"."
 ];
 const html=document.documentElement;
 const isPrint=/[?&]print/.test(location.search);

@@ -1,5 +1,7 @@
 # NextLap · Demo Day · Guion (Grupo 8)
 
+> **La presentación es en inglés:** el guion oficial es `SCRIPT.md` y las tarjetas son `CARDS.pdf`. Este archivo queda solo como traducción de referencia al español.
+
 **Viernes 20 nov · 13:05–13:12 presentación · 13:12–13:17 preguntas · Lab 033 RESB**
 Andy Villarroel + Agustín Reyes · bloque de 7 min de presentación (usamos **~5 min**), 5 de preguntas. Ambos responden.
 
