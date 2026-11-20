@@ -189,6 +189,7 @@ html.print h1 em,html.print h2 em,html.print .verdict em{background:none;-webkit
   <div class="hero">
     <h1 class="rv" style="--i:1">¿Cuánto tardará la <em>próxima vuelta</em>?</h1>
     <p class="oneliner rv" style="--i:3">Al terminar la vuelta <b>t</b>, predecimos cuántos <b>segundos</b> durará la vuelta <b>t+1</b> del mismo piloto, usando solo lo que ya se sabe. Podría ayudar a un ingeniero a <b>anticipar el ritmo</b> y decidir cuándo reaccionar.</p>
+    <p class="rv" style="--i:4;font:500 20px/1.4 var(--mono);letter-spacing:.06em;color:var(--mute);margin-top:22px">Validación sobre carreras pasadas · no es una prueba en vivo</p>
   </div>
   <svg class="track" viewBox="0 0 760 760" aria-hidden="true">
     <defs>
@@ -312,6 +313,7 @@ html.print h1 em,html.print h2 em,html.print .verdict em{background:none;-webkit
           <g fill="#8b909c" font-size="15" text-anchor="middle"><text x="278" y="104">+0.009</text><text x="429" y="104" fill="#35e39b">+0.018</text><text x="601" y="104">+0.028</text></g>
         </svg>
         <p style="font-size:21px;color:#c9c7c0;margin-top:10px">Las 2,000 réplicas dan positivo. Se cumple la regla <b>pre-registrada en Hito 1</b>: candidato &lt; referencia y &lt; control, en total y en cada carrera.</p>
+        <p style="font-size:21px;color:#c9c7c0;margin-top:10px">Mejora <b>real, pero pequeña</b>: el error típico es ≈ 0.37 s.</p>
       </div>
     </div>
   </div>
@@ -373,6 +375,7 @@ html.print h1 em,html.print h2 em,html.print .verdict em{background:none;-webkit
       <div class="casebar rv" style="--i:6">
         <div><span>Observado</span>97.882 s</div><div><span>Predicho (cand.)</span>99.121 s</div><div><span>Error absoluto</span><b class="accc">1.239 s</b></div><div><span>Control</span>4.228 s</div>
       </div>
+      <p class="rv" style="--i:7;font-size:21px;color:#c9c7c0;margin-top:16px;line-height:1.4"><b style="color:var(--ctl)">Límite:</b> la dispersión no sabe la <b>dirección</b>. Si el ritmo lento sigue, corrige de más (L12 del mismo piloto: 1.15 s peor).</p>
     </div>
   </div>
   <div class="num">04 <i>/</i> 06</div>
@@ -1666,7 +1669,7 @@ html.print h1 em,html.print h2 em,html.print .verdict em{background:none;-webkit
 const NOTES=[
 `Hola, somos Andy Villarroel y Agustín Reyes, grupo 8, y este es NextLap. La pregunta: cuando un piloto termina una vuelta, ¿cuánto va a tardar en la siguiente? Predecimos ese tiempo en segundos al final de la vuelta t, usando solo lo que ya se sabe. Podría ayudar a un ingeniero a anticipar si el ritmo se cae o se recupera. Todo es validación sobre carreras pasadas, no una prueba en vivo.`,
 `El modelo base usa el promedio de las últimas vueltas, pero el promedio no distingue a un piloto regular de uno que va a saltos. Agregamos la dispersión: cuánto varían sus últimas hasta tres vueltas limpias, calculada hasta la vuelta t, nunca después. Si hay menos de dos, usamos una bandera y la mediana del entrenamiento. Entrenamos con las carreras 1 a 7 y validamos en Austria y Gran Bretaña: las mismas 1.808 vueltas para todos. Antes de mirar resultados pasamos cuatro chequeos anti-fuga. El control es el mismo modelo sin la dispersión. Agustín.`,
-`Medimos el MAE: en promedio, por cuántos segundos fallamos. Menos es mejor. La referencia del curso: 0,3867. El control, con solo la bandera: 0,3877; la bandera sola no ayuda. Nuestro candidato: 0,3697. Control menos candidato: +0,018 segundos a favor del candidato, cerca de 4,6 % menos error. Un bootstrap por piloto-carrera da un intervalo de 0,009 a 0,028: no incluye cero. Y se cumple la regla que fijamos en el Hito 1 antes de correr nada. Siendo honestos: es una mejora real, pero pequeña frente a un error típico de 0,37.`,
+`Medimos el MAE: en promedio, por cuántos segundos fallamos. Menos es mejor. La referencia del curso: 0,3867. Nuestro candidato, con la dispersión: 0,3697. El control, igual pero sin la dispersión: 0,3877; la bandera sola no ayuda. Control menos candidato: +0,018 segundos a favor del candidato, cerca de 4,6 % menos error. Un bootstrap por piloto-carrera da un intervalo de 0,009 a 0,028: no incluye cero. Y se cumple la regla que fijamos en el Hito 1 antes de correr nada. Siendo honestos: es una mejora real, pero pequeña frente a un error típico de 0,37.`,
 `Mejora en las dos carreras: Austria 0,013, Gran Bretaña 0,025. Pero casi toda la ganancia viene de ventanas inestables: ahí baja 0,085. Con poco historial, empeora un poco. Caso real: el piloto 23 en Silverstone venía en 96 segundos y hace una vuelta de 105. El control se la cree y predice 102,1: falla por 4,2. El candidato ve la ventana inestable y predice 99,1; la real fue 97,9, error de 1,24. El límite: la dispersión no sabe la dirección; si el ritmo lento se mantiene, corrige de más.`,
 `¿Qué movió esa predicción? Con SHAP sobre el candidato entrenado: partimos de 86,73, el promedio de entrenamiento. El promedio reciente suma 8,2 y la vuelta actual 6,7, porque Silverstone es largo. La dispersión resta 2,47: con una ventana inestable, el modelo espera una vuelta más rápida. Base más aportes da 99,121, exactamente la predicción. Esto explica la predicción, no el error, que es aparte: 1,24. En global, en las 1.808 vueltas, la dispersión es el tercer input. Pero que mejore el error lo prueba la ablación, no SHAP. Andy.`,
 `Decisión: mantenemos la dispersión. Mismo modelo, mismas vueltas, mismo control: mejora en las dos carreras y el intervalo no incluye cero. Aplica a regresión lineal, vueltas limpias, Austria y Gran Bretaña; no con historial corto, pits ni otros circuitos. Una variante sin bandera dio algo mejor, pero la elegimos después de ver validación, así que no la adoptamos. Siguiente chequeo: una desviación con signo, que sepa si la vuelta fue más lenta o más rápida. Gracias, ¿preguntas?`,

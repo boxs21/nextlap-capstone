@@ -10,6 +10,8 @@ Ritmo: ~140 palabras por minuto, ~5 min en total. Si sobra tiempo, pueden alarga
 
 ## Cómo usar el deck
 
+**Truco: el slide es el guion.** El texto de cada slide está en el mismo orden en que se dice. Lean de arriba hacia abajo y de izquierda a derecha, apuntando a lo que dicen. Para pillar el hilo si se pierden: `TARJETAS.pdf` (una hoja por persona, en la mano o en el celular).
+
 - Abrir `NextLap_DemoDay.html` en **Chrome** → `F` pantalla completa.
 - `→` / espacio / click = avanzar · `←` = volver · `1`–`8` = saltar a slide.
 - `N` = muestra el guion abajo (solo para practicar, **no** con el proyector conectado en espejo).
@@ -34,7 +36,7 @@ Ritmo: ~140 palabras por minuto, ~5 min en total. Si sobra tiempo, pueden alarga
 
 ## 03 · Resultado — AGUSTÍN · 1:20–2:25
 
-> Medimos el **MAE**: en promedio, por cuántos segundos fallamos. Menos es mejor. La referencia del curso: **0,3867**. El control, con solo la bandera: **0,3877**; la bandera sola no ayuda. Nuestro candidato: **0,3697**. Control menos candidato: **+0,018 segundos** a favor del candidato, cerca de 4,6 % menos error. Un bootstrap por piloto-carrera da un intervalo de **0,009 a 0,028**: no incluye cero. Y se cumple la regla que fijamos en el Hito 1 antes de correr nada. Siendo honestos: es una mejora real, pero **pequeña** frente a un error típico de 0,37.
+> Medimos el **MAE**: en promedio, por cuántos segundos fallamos. Menos es mejor. La referencia del curso: **0,3867**. Nuestro candidato, con la dispersión: **0,3697**. El control, igual pero sin la dispersión: **0,3877**; la bandera sola no ayuda. Control menos candidato: **+0,018 segundos** a favor del candidato, cerca de 4,6 % menos error. Un bootstrap por piloto-carrera da un intervalo de **0,009 a 0,028**: no incluye cero. Y se cumple la regla que fijamos en el Hito 1 antes de correr nada. Siendo honestos: es una mejora real, pero **pequeña** frente a un error típico de 0,37.
 
 ---
 
