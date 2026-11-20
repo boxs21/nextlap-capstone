@@ -1,10 +1,10 @@
 # NextLap · Demo Day · Guion (Grupo 8)
 
 **Viernes 20 nov · 13:05–13:12 presentación · 13:12–13:17 preguntas · Lab 033 RESB**
-Andy Villarroel + Agustín Reyes · 7 min de presentación, 5 de preguntas. Ambos responden.
+Andy Villarroel + Agustín Reyes · bloque de 7 min de presentación (usamos **~5 min**), 5 de preguntas. Ambos responden.
 
 Reparto: **Andy** abre y cierra (slides 1, 2, 6). **Agustín** cuenta los resultados (slides 3, 4, 5).
-Ritmo: ~140 palabras por minuto. Si van atrasados, recorten lo que está entre [corchetes].
+Ritmo: ~140 palabras por minuto, ~5 min en total. Si sobra tiempo, pueden alargar el caso de la slide 4 (tienen hasta 7:00).
 
 ---
 
@@ -13,69 +13,46 @@ Ritmo: ~140 palabras por minuto. Si van atrasados, recorten lo que está entre [
 - Abrir `NextLap_DemoDay.html` en **Chrome** → `F` pantalla completa.
 - `→` / espacio / click = avanzar · `←` = volver · `1`–`8` = saltar a slide.
 - `N` = muestra el guion abajo (solo para practicar, **no** con el proyector conectado en espejo).
-- `T` = cronómetro (`mm:ss / 07:00`, se pone rojo si van atrasados en esa slide). Parte solo al pasar a la slide 2.
+- `T` = cronómetro (`mm:ss / 05:00`, se pone rojo si van atrasados en esa slide). Parte solo al pasar a la slide 2.
 - Slides 7 y 8 = **respaldo** para preguntas (no se presentan).
 - Si el HTML falla: `NextLap_DemoDay_backup.pdf` (mismo contenido, estático).
 - Funciona **sin internet** (fuentes y Three.js van dentro del archivo).
 
 ---
 
-## 01 · Título — ANDY · 0:00–0:45
+## 01 · Título — ANDY · 0:00–0:35
 
-> Hola, somos Andy Villarroel y Agustín Reyes, grupo 8. Nuestro proyecto es NextLap.
-> La pregunta es simple: cuando un piloto termina una vuelta, **¿cuánto va a tardar en la siguiente?**
-> Predecimos ese tiempo en segundos, justo al final de la vuelta *t*, usando solo lo que ya se sabe en ese momento.
-> Eso podría ayudar a un ingeniero de carrera a anticipar si el ritmo se cae o se recupera, y decidir cuándo reaccionar.
-> Ojo: todo lo que vamos a mostrar es validación sobre carreras pasadas, no una prueba en vivo.
+> Hola, somos Andy Villarroel y Agustín Reyes, grupo 8, y este es NextLap. La pregunta: cuando un piloto termina una vuelta, **¿cuánto va a tardar en la siguiente?** Predecimos ese tiempo en segundos al final de la vuelta *t*, usando solo lo que ya se sabe. Podría ayudar a un ingeniero a anticipar si el ritmo se cae o se recupera. Todo es validación sobre carreras pasadas, no una prueba en vivo.
 
 ---
 
-## 02 · Qué cambiamos — ANDY · 0:45–1:45
+## 02 · Qué cambiamos — ANDY · 0:35–1:20
 
-> El modelo base usa el promedio de las últimas vueltas. Pero el promedio no distingue a un piloto **regular** de uno que va **a saltos**.
-> Por eso agregamos la **dispersión**: cuánto varían sus últimas hasta tres vueltas limpias, mismo piloto, carrera y stint, calculada hasta la vuelta *t* y nunca después. *(apuntar a la línea "FIN DE t")*
-> Si hay menos de dos vueltas limpias, la marcamos con una bandera y usamos la mediana del entrenamiento.
-> Para que sea justo: entrenamos con las carreras 1 a 7 y validamos en Austria y Gran Bretaña, 1.808 vueltas, **las mismas para todos los modelos**.
-> [Antes de mirar resultados corrimos cuatro chequeos anti-fuga; por ejemplo, borramos las vueltas futuras en 700 filas y la variable no cambió ni una vez.]
-> El control es el mismo modelo **sin** la dispersión: lo único distinto es el cambio. Le paso a Agustín.
+> El modelo base usa el promedio de las últimas vueltas, pero el promedio no distingue a un piloto **regular** de uno que va **a saltos**. Agregamos la **dispersión**: cuánto varían sus últimas hasta tres vueltas limpias, calculada hasta la vuelta *t*, nunca después. Si hay menos de dos, usamos una bandera y la mediana del entrenamiento. Entrenamos con las carreras 1 a 7 y validamos en Austria y Gran Bretaña: **las mismas 1.808 vueltas para todos**. Antes de mirar resultados pasamos cuatro chequeos anti-fuga. El control es el mismo modelo **sin** la dispersión. Agustín.
 
 ---
 
-## 03 · Resultado — AGUSTÍN · 1:45–3:25
+## 03 · Resultado — AGUSTÍN · 1:20–2:25
 
-> Gracias. Medimos el **MAE**: en promedio, por cuántos segundos fallamos la vuelta siguiente. Menos es mejor.
-> Tres corridas, mismas 1.808 vueltas. La referencia del curso, regresión lineal con seis variables: **0,3867**. El control, que agrega solo la bandera: **0,3877** — o sea, la bandera sola no ayuda. Nuestro candidato, con la dispersión: **0,3697**.
-> La resta que importa es **control menos candidato: +0,018 segundos**. Positivo significa que el candidato se equivoca menos, cerca de un 4,6 % menos.
-> ¿Es suerte? Hicimos un bootstrap remuestreando piloto-carreras completas dos mil veces: el intervalo va de **0,009 a 0,028** y todas las réplicas dieron positivo.
-> [Además se cumple la regla que escribimos en el Hito 1 antes de correr nada.]
-> Siendo honestos: 18 milésimas es poco frente a un error típico de 0,37 segundos. Es una mejora real, pero **pequeña**.
+> Medimos el **MAE**: en promedio, por cuántos segundos fallamos. Menos es mejor. La referencia del curso: **0,3867**. El control, con solo la bandera: **0,3877**; la bandera sola no ayuda. Nuestro candidato: **0,3697**. Control menos candidato: **+0,018 segundos** a favor del candidato, cerca de 4,6 % menos error. Un bootstrap por piloto-carrera da un intervalo de **0,009 a 0,028**: no incluye cero. Y se cumple la regla que fijamos en el Hito 1 antes de correr nada. Siendo honestos: es una mejora real, pero **pequeña** frente a un error típico de 0,37.
 
 ---
 
-## 04 · Dónde le cuesta — AGUSTÍN · 3:25–4:40
+## 04 · Dónde le cuesta — AGUSTÍN · 2:25–3:20
 
-> Por carrera mejora en las dos: Austria **0,013** y Gran Bretaña **0,025**, casi el doble; Gran Bretaña es donde todos se equivocan más. Ponderando por vueltas recuperamos exactamente el 0,018 total.
-> Pero la ganancia no es pareja: casi toda viene de **ventanas inestables**, donde el error baja **0,085** segundos. Con poco historial, empeora un poco.
-> Un caso real *(apuntar al gráfico)*: piloto 23, Williams, Silverstone. Venía en 96 segundos y en la vuelta 7 hace **105**. El control se cree esa vuelta lenta y predice 102,1: falla por **4,2 segundos**. El candidato ve que la ventana está inestable y predice **99,1**. La vuelta real fue **97,9**: error de **1,24**.
-> El límite: la dispersión **no sabe la dirección**. En la vuelta 12 del mismo piloto el ritmo lento se mantuvo y el candidato corrigió de más.
+> Mejora en las dos carreras: Austria **0,013**, Gran Bretaña **0,025**. Pero casi toda la ganancia viene de **ventanas inestables**: ahí baja **0,085**. Con poco historial, empeora un poco. Caso real: el piloto 23 en Silverstone venía en 96 segundos y hace una vuelta de **105**. El control se la cree y predice 102,1: falla por **4,2**. El candidato ve la ventana inestable y predice **99,1**; la real fue **97,9**, error de **1,24**. El límite: la dispersión **no sabe la dirección**; si el ritmo lento se mantiene, corrige de más.
 
 ---
 
-## 05 · SHAP — AGUSTÍN · 4:40–6:00
+## 05 · SHAP — AGUSTÍN · 3:20–4:20
 
-> ¿Qué movió esa predicción? Usamos **SHAP** sobre el candidato ya entrenado, en esa misma vuelta. SHAP reparte la predicción en aportes en segundos.
-> Partimos del promedio de predicciones del entrenamiento: **86,73**. El promedio reciente suma **8,2** y la vuelta actual **6,7**, sobre todo porque Silverstone es un circuito largo. La dispersión **resta 2,47**: el modelo aprendió que una ventana muy inestable suele venir seguida de una vuelta más rápida que esa vuelta lenta. El resto casi no aporta.
-> Chequeo: base más aportes da **99,121**, exactamente la predicción. Y ojo: esto explica la **predicción**, no el error; el error observado es aparte, 1,24 segundos.
-> En global, sobre las 1.808 vueltas de validación y con fondo de entrenamiento, la dispersión es el **tercer input**, 0,15 segundos promedio en ambas carreras. Pero SHAP mide influencia; que mejore el error lo prueba la ablación. Le devuelvo a Andy.
+> ¿Qué movió esa predicción? Con **SHAP** sobre el candidato entrenado: partimos de **86,73**, el promedio de entrenamiento. El promedio reciente suma **8,2** y la vuelta actual **6,7**, porque Silverstone es largo. La dispersión **resta 2,47**: con una ventana inestable, el modelo espera una vuelta más rápida. Base más aportes da **99,121**, exactamente la predicción. Esto explica la predicción, no el error, que es aparte: 1,24. En global, en las 1.808 vueltas, la dispersión es el **tercer input**. Pero que mejore el error lo prueba la ablación, no SHAP. Andy.
 
 ---
 
-## 06 · Decisión — ANDY · 6:00–7:00
+## 06 · Decisión — ANDY · 4:20–5:00
 
-> Entonces, ¿qué decisión defendemos? **Mantenemos la dispersión.** Con el mismo modelo, las mismas vueltas y el mismo control, se equivoca menos en las dos carreras, el intervalo no incluye cero y cumple la regla fijada antes de ver datos.
-> ¿Hasta dónde aplica? Regresión lineal, vueltas limpias, Austria y Gran Bretaña; ayuda sobre todo cuando el ritmo viene irregular, y con historial corto no ayuda. No lo afirmamos para pits, safety car ni otros circuitos.
-> [Probamos una versión sin bandera que dio un poco mejor, pero no la adoptamos: la elegimos después de ver validación, y eso sería ajustar sobre validación.]
-> Siguiente chequeo: una **desviación con signo**, que sepa si la última vuelta fue más lenta o más rápida, con el criterio ya fijado. **Gracias, ¿preguntas?**
+> Decisión: **mantenemos la dispersión.** Mismo modelo, mismas vueltas, mismo control: mejora en las dos carreras y el intervalo no incluye cero. Aplica a regresión lineal, vueltas limpias, Austria y Gran Bretaña; no con historial corto, pits ni otros circuitos. Una variante sin bandera dio algo mejor, pero la elegimos después de ver validación, así que no la adoptamos. Siguiente chequeo: una **desviación con signo**, que sepa si la vuelta fue más lenta o más rápida. **Gracias, ¿preguntas?**
 
 ---
 
@@ -110,7 +87,7 @@ Regla: respuesta corta → número → límite. Si no saben algo: "no lo probamo
 
 ## Checklist para mañana
 
-- [ ] Ensayar 1 vez con cronómetro (`T`). Meta: terminar la slide 6 antes de 7:00.
+- [ ] Ensayar 1 vez con cronómetro (`T`). Meta: terminar la slide 6 cerca de 5:00 (máximo 7:00).
 - [ ] Copiar `NextLap_DemoDay.html` **y** `NextLap_DemoDay_backup.pdf` a un pendrive + mandárselos a Agustín.
 - [ ] Abrir el HTML en el computador del lab antes (13:00). Si va lento: el PDF.
 - [ ] Llegar con el repo abierto en el notebook §5 / §8 por si piden ver el código.
