@@ -111,15 +111,25 @@ The lapped/not-lapped slice uses timing of other cars around lap *t*, so it is a
 
 ## D · Contributions
 
-> **TO BE COMPLETED BY THE TEAM:** each member's contribution to the final revision and one decision or check each can explain (Hito 2 contributions are in `Hito2/DECISION_LOG.md` §E).
-
-| Member | Contribution (final) | Decision or check they can explain |
+| Member | Contribution (final revision) | Decision or check they can explain |
 |---|---|---|
-| Andy Ignacio Jesús Villarroel González | _pending_ | _pending_ |
-| Agustín Eduardo Reyes Pereira | _pending_ | _pending_ |
+| Andy Ignacio Jesús Villarroel González | **R1** signed deviation as T4 and its identity with `current_lap_s − recent_mean_s` (C1); **R2** decomposition spread² = ¾ (t − mean)² + ¼ (a − b)² and the part-by-part trials T5/T6 (C2); **R3** table by race × history length (C3); independent re-run of `Final/final_revision.ipynb` before submission | Withdraw the signed deviation (C1): it is an exact multiple of t − mean, already in OLS; control − T4 = −0.0001 s. Limit the claim to 3-lap windows (C3): the only history length with a positive gain in both races (+0.0174 / +0.0328 s) |
+| Agustín Eduardo Reyes Pereira | **R4** paired T1-vs-T3 comparison with driver-race cluster bootstrap (C4–C5); **R5** Demo Day question: field check on lap 7, reconstruction of on-track passes, race reports, lapped / not-lapped slice (C7); `FINAL_REPORT.md`, README and PDF | Keep T1 although T3 is +0.0045 s better (C5): the advantage is not consistent across races (R8 interval includes zero) and T3 was chosen after seeing validation. Lap 7 was slow because driver 23 was lapped by 6 cars (C7); half of the gain comes from traffic laps, so the next check is a traffic input |
+
+Both members reviewed the final report, the T1 decision (C5) and the traffic finding (C7).
 
 ---
 
 ## E · AI use and verification (final revision)
 
-> **TO BE COMPLETED BY THE TEAM:** actual AI use for the final revision (or no use). For each adopted suggestion: what was used and the check performed, with its result. Hito 2 use is in `Hito2/DECISION_LOG.md` §F.
+We used Claude (Anthropic) as a coding and writing assistant, as in Hito 2. It did not choose what to check, the decision to
+keep T1 or the next check; those followed the Hito 2 feedback, the Demo Day question and the rule fixed in Hito 1.
+
+| Use (member) | Representative prompt (paraphrased) | Accepted / changed | How we verified it |
+|---|---|---|---|
+| R1 identity and T4 (Andy) | "Show that the signed deviation is a multiple of current_lap_s − recent_mean_s for 2- and 3-lap windows and add it to the OLS as a trial" | Accepted the code after review. The factor per window (1.5 for 3 laps, 2 for 2 laps) was derived by hand and asserted, not taken from the assistant | Notebook assert: max diff 3.6e-14 s (1,487 rows) and 2.8e-14 s (173 rows); control − T4 = −0.0001 s |
+| R2 decomposition and T5/T6 (Andy) | "Decompose the variance of three laps a, b, t into a term in t − mean and a term in a − b, and fit each part alone" | Accepted the identity after checking it on paper; T5/T6 labelled exploratory (our decision) | Assert: identity holds to 2e-13 s² on 1,487 rows; T5/T6 MAEs re-read from the notebook table (+0.0153 / +0.0114 s) |
+| R3 race × history table (Andy) | "Group control and candidate MAE by race and recent_count on the same pair_ids" | Accepted; pooling check added by us | Assert: the planned predictions are identical to Hito 2 (≤ 1.4e-14 s); the row-weighted sum of groups equals the pooled control − candidate (0.0179 s) |
+| R4 paired bootstrap (Agustín) | "Paired cluster bootstrap of \|err T1\| − \|err T3\| resampling driver-races, overall, by race and by history length" | Accepted after review; seed 414 and 43 clusters kept from Hito 2 | Assert: bootstrap mean equals MAE(T1) − MAE(T3); the Hito 2 interval for control − T1 is reproduced exactly ([+0.0089, +0.0281]) |
+| R5 pass reconstruction and race reports (Agustín) | "Using lap end times of all cars, find which cars lapped driver 23 on each lap"; "find race reports explaining Albon's slow lap 7 at Silverstone 2026" | Accepted the code; interpolation assumption and its limit written by us. Sources kept only after reading them | Checked in the R9 lap CSV that lap 7 of #23 is 105.128 s (laps 5–6: 96.299, 98.070; lap 8: 97.882) with green status; assert 6 lapping cars on lap 7; opened the Williams and Albon reports and confirmed they mention the lap-1 contact, rejoining almost a lap down and the "blue flag chain" |
+| Drafting and editing the report (both) | Summaries of notebook outputs into `FINAL_REPORT.md` and this log | Rewritten and shortened by us | Every number checked against the executed notebook outputs; the notebook was re-run from scratch before submission and all asserts passed with identical MAEs and intervals |

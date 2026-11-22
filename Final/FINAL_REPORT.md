@@ -213,7 +213,7 @@ Seed 414 (truncation-check sample, bootstrap; OLS has no randomness). Commands, 
 ```bash
 pip install -r Final/requirements.txt
 jupyter nbconvert --to notebook --execute --inplace Hito2/hito2_experiment.ipynb   # planned experiment + SHAP
-jupyter nbconvert --to notebook --execute --inplace Final/final_revision.ipynb     # revision R1–R4
+jupyter nbconvert --to notebook --execute --inplace Final/final_revision.ipynb     # revision R1–R5
 ```
 
 Full checksums, the map from each section to its output, and the run records are in `Final/README.md` and in the last cell of
@@ -245,7 +245,6 @@ not matter; rows 5–6 below are our response.
 | 2 | **Specified** what the spread adds beyond `current_lap_s` and `recent_mean_s`. | Exact decomposition for 3 laps *a, b, t*: **spread² = ¾ (t − mean)² + ¼ (a − b)²**; then each part alone (exploratory). | Identity holds (max diff 2e-13 s², 1,487 rows). OLS is linear, so it can use the signed t − mean but not its **size**, nor the **disagreement between earlier laps** (a − b)². Each part alone vs control: T5 \|t − mean\| **+0.0153 s** (R8 +0.0113, R9 +0.0210); T6 earlier-lap spread **+0.0114 s** (R8 +0.0099, R9 +0.0135). The spread combines both (+0.0179). |
 | 3 | **Added** results by race and history length on the same IDs. | Table in §3, row-weighted pooling asserted. | Gain in 3-lap windows in both races (+0.017 / +0.033); no consistent gain with 2 laps or the fallback. |
 | 4 | **Replaced** the Hito 2 T1-vs-T3 argument with a direct paired comparison. | Per-row \|err T1\| − \|err T3\|, paired driver-race cluster bootstrap (seed 414). | MAE(T1) − MAE(T3) = **+0.0045 s** [+0.0009, +0.0085]. By race: R8 +0.0012 [−0.0042, +0.0060]; R9 +0.0093 [+0.0045, +0.0144]. By history: 3 laps +0.0012 [−0.0014, +0.0038]; 2 laps +0.0047 [−0.0036, +0.0126]; fallback +0.0371 [−0.0149, +0.0933]. |
-
 | 5 | **Investigated** the cause of the slow lap in the inspected case (Demo Day). | Field check on lap 7 (all 22 drivers) and on-track passes reconstructed from official timing; public race reports. | Only driver 23 lost > 2 s (field median +0.11 s), all green. He was lapped by 6 cars on lap 7 (1 on lap 6, 2 on lap 12, 1 on lap 13), consistent with the team report of a blue-flag chain [1, 2]; dry race [3], neutralisations far from lap 7 [4]. |
 | 6 | **Bounded** the claim by traffic and **corrected** the L12 explanation; **replaced** the next check. | Diagnostic slice: lapped during *t* vs not, by race. | Lapped rows (n = 83): +0.194 s; others (n = 1,725): +0.0095 s (R8 +0.0046, R9 +0.0164). Half the gain comes from traffic laps; the rest is positive in both races. Next check: a traffic input available at *t* (§3). |
 
